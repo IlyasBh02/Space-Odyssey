@@ -6,6 +6,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Base image responsiveness */
+img { max-width: 100%; height: auto; display: block; }
+
 
 :root {
   --color-bg: #030712;
@@ -228,10 +231,7 @@
 
 
 /* ===== Utilities / Layout ===== */
-.container{
-  max-width:1200px;
-  margin:40px auto;
-}
+.container{ max-width:1200px; margin:40px auto; padding:0 20px; }
 
 .container-narrow{max-width:1000px;margin:40px auto;padding:0 20px;}
 .container-tight{max-width:900px;margin:40px auto;padding:0 20px;}
@@ -727,7 +727,7 @@
 /* Page-specific slider backgrounds */
 .page-index .slidr{background-image:url('../img/img1.jpg');}
 .page-planets .slidr{background-image:url('../img/img2.jpg');}
-.page-missions .slidr{background-image:url('../img/img3.jpg');}
+.page-missions .slidr{background-image:url('../img/unsplash_Q_RBVFFXR_g.png');}
 .page-about .slidr{background-image:url('../img/about.png');}
 .page-contact .slidr{background-image:url('../img/unsplash_Q_RBVFFXR_g.png');}
 
@@ -743,20 +743,19 @@
     justify-content: center;
   }
 
-  .navbar-bottom {
-    flex-direction: column;
-    gap: 10px;
-  }
+  .navbar-bottom { flex-direction: column; gap: 10px; padding: 12px 20px; }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
 }
 
 /* ====== Additional responsive refinements ====== */
 @media (max-width: 1024px) {
   .slidr-text h1{font-size:44px;}
+  .Discover-cards{grid-template-columns: repeat(2,1fr); gap: 40px;}
+  .Discover-content{grid-template-columns: 1fr; margin-left: 8%; margin-right: 8%;}
+  .Astronomy{grid-template-columns: 1fr; margin-left: 8%; margin-right: 8%;}
+  .journale{grid-template-columns: 1fr; margin-left: 8%; margin-right: 8%;}
+  .contact-description{grid-template-columns: 1fr; margin-left: 8%; margin-right: 8%;}
 }
 
 @media (max-width: 768px) {
@@ -773,11 +772,19 @@
     gap: 16px;
     padding: 40px 20px;
   }
+  .h1{font-size:32px;}
+  .container{padding:0 16px;}
+  .Discover-cards{grid-template-columns: 1fr; gap: 24px; padding: 30px 0;}
+  .Astronomy-img{width: 100%; border-radius: 25px 25px 0 0;}
+  .footer-content{padding: 20px;}
+  .footer-top{flex-direction: column; gap: 20px; align-items: flex-start;}
+  .footer-bottom{flex-direction: column; gap: 16px; align-items: flex-start;}
 }
 
 @media (max-width: 375px) {
   .slidr-text h1{font-size:34px;}
   .explore-btn{padding:8px 18px;}
+  .nav-links a{font-size:14px;}
 }
 
 /* ===== About Alternating Sections ===== */
@@ -795,6 +802,20 @@
   .about-row{flex-direction:column;align-items:flex-start;}
   .about-row.is-reversed{flex-direction:column;}
   .about-image{width:100%;}
+}
+
+/* ===== Missions page responsive grid ===== */
+.missions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;}
+@media (max-width: 900px){
+  .missions-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+}
+@media (max-width: 600px){
+  .missions-grid{grid-template-columns:1fr;}
+}
+
+/* ===== Contact cards responsive ===== */
+@media (max-width: 900px){
+  .contact-cards{grid-template-columns:1fr;margin-left:8%;margin-right:8%;}
 }
 
 
